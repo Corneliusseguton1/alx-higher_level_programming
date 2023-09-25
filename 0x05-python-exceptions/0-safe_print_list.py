@@ -1,16 +1,11 @@
 #!/usr/bin/python3
-def safe_print_integer(value):
-    '''
-    Safely prints an integer
-
-    Parameters:
-    value (int): The integer to print
-
-    Returns:
-    True if the integer was successfully printed, otherwise False
-    '''
-    try:
-        print("{:d}".format(value))
-        return True
-    except Exception:
-        return False
+def safe_print_list(my_list=[], x=0):
+    idx = 0
+    while idx < x:
+        try:
+            print("{}".format(my_list[idx]), end="")
+        except IndexError:
+            break
+        idx += 1
+    print("")
+    return idx
